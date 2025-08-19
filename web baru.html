@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HIDRO</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Orbitron:wght@700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-gray-100 font-sans">
+    <div class="flex h-screen overflow-hidden">
+        <!-- Sidebar -->
+        <div class="hidden md:flex md:flex-shrink-0">
+            <div class="flex flex-col w-64 bg-green-800">
+                <div class="flex items-center justify-start h-20 px-4 bg-green-900">
+                    <div class="flex items-center space-x-3">
+                        <div class="relative">
+                            <img class="w-12 h-12 rounded-full" src="plant.jpg" alt="Logo">
+                        
+                        </div>
+                        <div>
+                           <p class="text-white font-bold text-2xl font-[Poppins]">HIDRO</p>
+
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex flex-col flex-grow pt-5 overflow-y-auto">
+                    <nav class="flex-1 px-4 space-y-2">
+                        <a href="#" class="flex items-center px-4 py-3 text-white bg-green-900 rounded-lg">
+                            <i class="fas fa-tachometer-alt mr-3"></i>
+                            Dashboard
+                        </a>
+                        <a href="#" class="flex items-center px-4 py-3 text-green-200 hover:text-white hover:bg-green-700 rounded-lg">
+                            <i class="fas fa-chart-line mr-3"></i>
+                            Analytics
+                        </a>
+                        <a href="#" class="flex items-center px-4 py-3 text-green-200 hover:text-white hover:bg-green-700 rounded-lg">
+                            <i class="fas fa-bug mr-3"></i>
+                            Disease Detection
+                        </a>
+                        <a href="#" class="flex items-center px-4 py-3 text-green-200 hover:text-white hover:bg-green-700 rounded-lg">
+                            <i class="fas fa-cog mr-3"></i>
+                            Settings
+                        </a>
+                        <a href="#" class="flex items-center px-4 py-3 text-green-200 hover:text-white hover:bg-green-700 rounded-lg">
+                            <i class="fas fa-history mr-3"></i>
+                            Logs
+                        </a>
+                    </nav>
+                </div>
+                <div class="p-4 border-t border-green-700">
+                    <div class="flex items-center">
+                        <img class="w-10 h-10 rounded-full" src="me.jpg" alt="Eureka">
+                        <div class="ml-3">
+                            <p class="text-white font-medium">Eureka</p>
+                            <p class="text-green-200 text-sm">eurekaakram@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile sidebar -->
+        <div class="md:hidden fixed inset-0 z-40" id="mobile-sidebar" style="display: none;">
+            <div class="fixed inset-0 bg-gray-600 bg-opacity-75" onclick="toggleMobileSidebar()"></div>
+            <div class="relative flex flex-col w-72 h-full bg-green-800">
+                <div class="flex items-center justify-between h-20 px-4 bg-green-900">
+                    <div class="flex items-center space-x-3">
+                        <div class="relative">
+                            <img class="w-12 h-12 rounded-full ring-2 ring-white shadow-md" src="plant.jpg" alt="Logo">
+                        </div>
+                        <div>
+                            <p class="text-white font-bold text-2xl font-[Poppins]">HIDRO</p>
+                        </div>
+                    </div>
+                    <button onclick="toggleMobileSidebar()" class="text-white">
+                        <i class="fas fa-times text-xl"></i>
+                    </button>
+                </div>
+
+                <div class="flex flex-col flex-grow pt-5 overflow-y-auto">
+                    <nav class="flex-1 px-4 space-y-2">
+                        <a href="#" class="flex items-center px-4 py-3 text-white bg-green-900 rounded-lg">
+                            <i class="fas fa-tachometer-alt mr-3"></i>
+                            Dashboard
+                        </a>
+                        <a href="#" class="flex items-center px-4 py-3 text-green-200 hover:text-white hover:bg-green-700 rounded-lg">
+                            <i class="fas fa-chart-line mr-3"></i>
+                            Analytics
+                        </a>
+                        <a href="#" class="flex items-center px-4 py-3 text-green-200 hover:text-white hover:bg-green-700 rounded-lg">
+                            <i class="fas fa-bug mr-3"></i>
+                            Disease Detection
+                        </a>
+                        <a href="#" class="flex items-center px-4 py-3 text-green-200 hover:text-white hover:bg-green-700 rounded-lg">
+                            <i class="fas fa-cog mr-3"></i>
+                            Settings
+                        </a>
+                        <a href="#" class="flex items-center px-4 py-3 text-green-200 hover:text-white hover:bg-green-700 rounded-lg">
+                            <i class="fas fa-history mr-3"></i>
+                            Logs
+                        </a>
+                    </nav>
+                </div>
+                <div class="p-4 border-t border-green-700">
+                    <div class="flex items-center">
+                        <img class="w-10 h-10 rounded-full" src="me.jpg" alt="Eureka">
+                        <div class="ml-3">
+                            <p class="text-white font-medium">Eureka</p>
+                            <p class="text-green-200 text-sm">eurekaakram@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main content -->
+        <div class="flex flex-col flex-1 overflow-hidden">
+            <!-- Top navigation -->
+            <div class="flex items-center justify-between h-16 px-6 bg-white border-b border-gray-200">
+                <div class="flex items-center">
+                    <button onclick="toggleMobileSidebar()" class="md:hidden text-gray-500 mr-4">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <h1 class="text-xl font-semibold text-gray-800">Dashboard</h1>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <div class="relative">
+                        <button class="text-gray-500 hover:text-gray-700">
+                            <i class="fas fa-bell"></i>
+                        </button>
+                    </div>
+                    <div class="relative">
+                        <button class="flex items-center text-gray-700 hover:text-gray-900">
+                            <img class="w-8 h-8 rounded-full" src="me.jpg" alt="Eureka">
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main content area -->
+            <div class="flex-1 overflow-auto p-6">
+                <div class="mb-6">
+                    <div class="flex items-center">
+                        <i class="fas fa-circle text-green-500 text-xs mr-2 live-pulse"></i>
+                        <span class="text-sm font-medium text-gray-600">Live Data</span>
+                        <span class="ml-2 text-sm text-gray-500">Last updated: <span id="last-updated">Just now</span></span>
+                    </div>
+                </div>
+
+                <!-- Sensor cards -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                    <!-- Temperature Card -->
+                    <div class="sensor-card bg-white rounded-xl shadow-md p-6 transition-all duration-300">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <p class="text-gray-500 font-medium">Suhu</p>
+                                <h2 class="text-3xl font-bold mt-2" id="suhu">--°C</h2>
+                                <p class="text-sm mt-1">
+                                    <span class="text-gray-400 ml-2">Ideal: 20-30°C</span>
+                                </p>
+                            </div>
+                            <div class="gauge">
+                                <div class="gauge-inner" id="suhu">--°</div>
+                            </div>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-gray-100">
+                            <div class="flex items-center text-sm">
+                                <i class="fas fa-info-circle text-gray-400 mr-2"></i>
+                                <span class="text-gray-500">Suhu Yang tidak stabil dapat mempengaruhi pertumbuhan tanaman</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Humidity Card -->
+                    <div class="sensor-card bg-white rounded-xl shadow-md p-6 transition-all duration-300">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <p class="text-gray-500 font-medium">Kelembaban Udara</p>
+                                <h2 class="text-3xl font-bold mt-2" id="udara">--%</h2>
+                                <p class="text-sm mt-1">
+                                    <span class="text-gray-400 ml-2">Ideal: 50-70%</span>
+                                </p>
+                            </div>
+                            <div class="gauge">
+                                <div class="gauge-inner" id="udara">--%</div>
+                            </div>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-gray-100">
+                            <div class="flex items-center text-sm">
+                                <i class="fas fa-info-circle text-gray-400 mr-2"></i>
+                                <span class="text-gray-500">Kelembaban yang tidak stabil akan berpengaruh pada tumbuhan!</span>
+                            </div>
+                        </div>
+                    </div>
+
+                        <!-- Soil Moisture Card -->
+                        <div class="sensor-card bg-white rounded-xl shadow-md p-6 transition-all duration-300">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <p class="text-gray-500 font-medium">Kelembaban Tanah</p>
+                                    <h2 class="text-3xl font-bold mt-2" id="tanah">--%</h2>
+                                    <p class="text-sm mt-1">
+                                     <span class="text-gray-400 ml-2">Ideal: 40-60%</span>
+                                    </p>
+                                </div>
+                                <div class="gauge">
+                                    <div class="gauge-inner" id="tanah">--%</div>
+                                </div>
+                            </div>
+                            <div class="mt-4 pt-4 border-t border-gray-100">
+                                <div class="flex items-center text-sm">
+                                    <i class="fas fa-info-circle text-gray-400 mr-2"></i>
+                                    <span class="text-gray-500">Sumber Utama Nutrisi Tumbuhan!</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- Camera View and Controls Section -->
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+                    <!-- Camera View -->
+                        <div class="lg:col-span-2 bg-white rounded-xl shadow-md overflow-hidden">
+                        <div class="p-4 border-b border-gray-200">
+                            <h3 class="text-lg font-semibold text-gray-800">Robot Camera View</h3>
+                        </div>
+                        
+                        <div class="camera-view aspect-video flex items-center justify-center relative">
+                            <!-- Placeholder -->
+                            <div id="camera-placeholder" class="text-white text-center absolute inset-0 flex flex-col items-center justify-center bg-black">
+                            <i class="fas fa-camera text-4xl mb-2"></i>
+                            <p>Live Camera Feed</p>
+                            </div>
+
+                            <!-- Video Feed -->
+                            <img id="camera-feed" 
+                                src = "a";
+                               class="absolute inset-0 w-full h-full object-cover hidden" />
+                        </div>
+
+                       <div class="p-4 border-t border-gray-200 flex justify-between items-center">
+                        <div class="flex space-x-2">
+                            <button id="fullscreen-btn" class="px-3 py-1 bg-gray-100 hover:bg-gray-200 rounded-lg text-sm">
+                            <i class="fas fa-expand mr-1"></i> Fullscreen
+                            </button>
+                            <button id="snapshot-btn" class="px-3 py-1 bg-gray-100 hover:bg-gray-200 rounded-lg text-sm">
+                            <i class="fas fa-camera mr-1"></i> Snapshot
+                            </button>
+                        </div>
+
+                        <!-- indikator streaming -->
+                        <div class="text-sm text-gray-500 flex items-center">
+                            <i id="stream-indicator" class="fas fa-circle text-gray-400 mr-1"></i>
+                            <span id="stream-status">Connecting...</span>
+                        </div>
+                        </div>
+
+
+                  </div>
+
+                   <!-- Robot Movement Controls -->
+                    <div class="bg-white rounded-xl shadow-md p-6">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-4">Robot Movement Controls</h3>
+                    <div class="flex flex-col items-center">
+                        <!-- Up Button -->
+                        <div class="mb-2">
+                        <button id="btn-forward" class="joystick-btn bg-gray-100 hover:bg-gray-200 text-gray-800">
+                            <i class="fas fa-arrow-up text-xl"></i>
+                        </button>
+                        </div>
+                        <!-- Left/Right Buttons -->
+                        <div class="flex space-x-2 mb-2">
+                        <button id="btn-left" class="joystick-btn bg-gray-100 hover:bg-gray-200 text-gray-800">
+                            <i class="fas fa-arrow-left text-xl"></i>
+                        </button>
+                        <button id="btn-stop" class="joystick-btn bg-red-100 hover:bg-red-200 text-red-600 w-20">
+                            <i class="fas fa-stop text-xl"></i>
+                        </button>
+                        <button id="btn-right" class="joystick-btn bg-gray-100 hover:bg-gray-200 text-gray-800">
+                            <i class="fas fa-arrow-right text-xl"></i>
+                        </button>
+                        </div>
+                        <!-- Down Button -->
+                        <div>
+                        <button id="btn-backward" class="joystick-btn bg-gray-100 hover:bg-gray-200 text-gray-800">
+                            <i class="fas fa-arrow-down text-xl"></i>
+                        </button>
+                        </div>
+                    </div>
+
+                   <div class="mt-6 pt-4 border-t border-gray-100">
+                    <h4 class="text-sm font-medium text-gray-500 mb-2">Speed Control</h4>
+                    <input 
+                        type="range" 
+                        min="1" 
+                        max="5" 
+                        value="3" 
+                        class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"
+                        id="speed-slider"
+                        oninput="updateSpeed(this.value)"
+                    >
+                    <div class="flex justify-between text-xs text-gray-500 mt-1">
+                        <span>Slow</span>
+                        <span>Medium</span>
+                        <span>Fast</span>
+                    </div>
+                    <p class="text-xs text-gray-600 mt-2">
+                        Current Speed: <span id="speed-value">3</span>
+                    </p>
+                </div>
+
+
+                    <div class="mt-4 pt-4 border-t border-gray-100">
+                        <h4 class="text-sm font-medium text-gray-500 mb-2">Current Status</h4>
+                        <div class="flex items-center">
+                        <i class="fas fa-circle text-green-500 mr-2"></i>
+                        <span id="robot-status">Idle</span>
+                        </div>
+                    </div>
+                    </div>
+
+
+                <!-- Disease Detection Panel -->
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden mb-8 col-span-full w-full">
+                    <div class="p-4 border-b border-gray-200 flex justify-between items-center">
+                        <h3 class="text-lg font-semibold text-gray-800">Disease Detection</h3>
+                        <button onclick="detectDisease()" class="px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg font-medium">
+                        <i class="fas fa-search mr-2"></i> Detect Disease
+                        </button>
+                    </div>
+                    <div class="p-4">
+                        <div id="disease-results" class="disease-card bg-gray-50 rounded-lg p-4 border border-gray-200 text-center">
+                        <div class="text-gray-400 mb-2">
+                            <i class="fas fa-leaf text-3xl"></i>
+                        </div>
+                        <h4 class="font-medium text-gray-700">Result</h4>
+                        <p id="disease-text" class="text-sm text-gray-500 mt-1">No disease detected yet</p>
+                        </div>
+                    </div>
+                    </div>
+                    </div>
+                           
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/camera.js"></script>
+    <script src="js/control.js"></script>
+    <script src="js/disease.js"></script>
+    <script src= "https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
+    <script src= "https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
+
+    <script>
+    const clientId = Math.random().toString(16).substr(2, 8);
+    const host = 'wss://euryan.cloud.shiftr.io:443';
+
+    const options = {
+        keepalive : 30,
+        clientId: clientId,
+        protocolId: 'MQTT',
+        protocolVersion: 4,
+        clean: true,
+        username: 'euryan',
+        password: 'apaajalah',
+        reconnectPeriod: 1000,
+        connectTimeout: 30 * 1000
+    }
+
+    console.log('Connecting to MQTT broker...');
+    const client = mqtt.connect(host, options);
+
+    client.on('connect', () => {
+        console.log('Terhubung:' + clientId);
+        client.subscribe("eureka/12345678/#");
+        document.getElementById('status').innerHTML = 'Terhubung';
+        document.getElementById('status').style.color = 'blue';
+    });
+
+    client.on('message', (topic, payload) => {
+        const data = payload.toString();
+        if(topic === 'eureka/12345678/udara') {
+            document.getElementById('udara').innerHTML = data;
+        } else if(topic === 'eureka/12345678/bpm') {
+            document.getElementById('bpm').innerHTML = data;
+        } else if(topic === 'eureka/12345678/suhu') {
+            document.getElementById('suhu').innerHTML = data;
+        } else if(topic === 'eureka/12345678/status'){
+            document.getElementById('status').innerHTML = data;
+        } else if(topic === 'eureka/12345678/tanah') {
+            document.getElementById('tanah').innerHTML = data;
+        } 
+    });
+</script>
+</body>
+</html>

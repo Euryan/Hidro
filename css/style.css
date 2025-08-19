@@ -1,0 +1,97 @@
+
+        .sensor-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .gauge {
+            position: relative;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: conic-gradient(
+                #10B981 0% 33%,
+                #3B82F6 33% 66%,
+                #EF4444 66% 100%
+            );
+        }
+        .gauge-inner {
+            position: absolute;
+            width: 80%;
+            height: 80%;
+            background: white;
+            border-radius: 50%;
+            top: 10%;
+            left: 10%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+        .live-pulse {
+            animation: pulse 2s infinite;
+        }
+        .camera-view {
+            background-color: #000;
+            background-image: url('https://via.placeholder.com/800x450?text=Plant+Camera+View');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        .joystick-btn {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .joystick-btn:hover {
+            transform: scale(1.05);
+        }
+        .joystick-btn:active {
+            transform: scale(0.95);
+        }
+        .disease-card {
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        .disease-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+        }
+        .disease-detail {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out;
+        }
+        .disease-detail.active {
+            max-height: 500px;
+            transition: max-height 0.5s ease-in;
+        }
+        .treatment-steps {
+            counter-reset: step-counter;
+        }
+        .treatment-step::before {
+            counter-increment: step-counter;
+            content: counter(step-counter);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 24px;
+            height: 24px;
+            background-color: #10B981;
+            color: white;
+            border-radius: 50%;
+            margin-right: 8px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+    
