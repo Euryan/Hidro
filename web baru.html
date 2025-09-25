@@ -13,7 +13,7 @@
 </head>
 <body class="bg-gray-100 font-sans">
     <div class="flex h-screen overflow-hidden">
-        <!-- Sidebar -->
+      
         <div class="hidden md:flex md:flex-shrink-0">
             <div class="flex flex-col w-64 bg-green-800">
                 <div class="flex items-center justify-start h-20 px-4 bg-green-900">
@@ -66,7 +66,7 @@
             </div>
         </div>
 
-        <!-- Mobile sidebar -->
+
         <div class="md:hidden fixed inset-0 z-40" id="mobile-sidebar" style="display: none;">
             <div class="fixed inset-0 bg-gray-600 bg-opacity-75" onclick="toggleMobileSidebar()"></div>
             <div class="relative flex flex-col w-72 h-full bg-green-800">
@@ -144,7 +144,6 @@
                 </div>
             </div>
 
-            <!-- Main content area -->
             <div class="flex-1 overflow-auto p-6">
                 <div class="mb-6">
                     <div class="flex items-center">
@@ -154,9 +153,7 @@
                     </div>
                 </div>
 
-                <!-- Sensor cards -->
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-                    <!-- Temperature Card -->
                     <div class="sensor-card bg-white rounded-xl shadow-md p-6 transition-all duration-300">
                         <div class="flex justify-between items-start">
                             <div>
@@ -178,7 +175,6 @@
                         </div>
                     </div>
 
-                    <!-- Humidity Card -->
                     <div class="sensor-card bg-white rounded-xl shadow-md p-6 transition-all duration-300">
                         <div class="flex justify-between items-start">
                             <div>
@@ -200,7 +196,6 @@
                         </div>
                     </div>
 
-                        <!-- Soil Moisture Card -->
                         <div class="sensor-card bg-white rounded-xl shadow-md p-6 transition-all duration-300">
                             <div class="flex justify-between items-start">
                                 <div>
@@ -223,24 +218,21 @@
                         </div>
                     </div>
 
-                <!-- Camera View and Controls Section -->
                 <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
-                    <!-- Camera View -->
                         <div class="lg:col-span-2 bg-white rounded-xl shadow-md overflow-hidden">
                         <div class="p-4 border-b border-gray-200">
                             <h3 class="text-lg font-semibold text-gray-800">Robot Camera View</h3>
                         </div>
                         
                         <div class="camera-view aspect-video flex items-center justify-center relative">
-                            <!-- Placeholder -->
                             <div id="camera-placeholder" class="text-white text-center absolute inset-0 flex flex-col items-center justify-center bg-black">
                             <i class="fas fa-camera text-4xl mb-2"></i>
                             <p>Live Camera Feed</p>
                             </div>
 
-                            <!-- Video Feed -->
+
                             <img id="camera-feed" 
-                                src = "a";
+                                src = "http://23.0.0.21:5000/video_feed";
                                class="absolute inset-0 w-full h-full object-cover hidden" />
                         </div>
 
@@ -254,7 +246,7 @@
                             </button>
                         </div>
 
-                        <!-- indikator streaming -->
+
                         <div class="text-sm text-gray-500 flex items-center">
                             <i id="stream-indicator" class="fas fa-circle text-gray-400 mr-1"></i>
                             <span id="stream-status">Connecting...</span>
@@ -264,11 +256,11 @@
 
                   </div>
 
-                   <!-- Robot Movement Controls -->
+
                     <div class="bg-white rounded-xl shadow-md p-6">
                     <h3 class="text-lg font-semibold text-gray-800 mb-4">Robot Movement Controls</h3>
                     <div class="flex flex-col items-center">
-                        <!-- Up Button -->
+
                         <div class="mb-2">
                         <button id="btn-forward" class="joystick-btn bg-gray-100 hover:bg-gray-200 text-gray-800">
                             <i class="fas fa-arrow-up text-xl"></i>
@@ -360,7 +352,7 @@
 
     <script>
     const clientId = Math.random().toString(16).substr(2, 8);
-    const host = 'wss://euryan.cloud.shiftr.io:443';
+    const host = 'wss://eureka.cloud.shiftr.io:443';
 
     const options = {
         keepalive : 30,
@@ -368,7 +360,7 @@
         protocolId: 'MQTT',
         protocolVersion: 4,
         clean: true,
-        username: 'euryan',
+        username: 'eureka',
         password: 'apaajalah',
         reconnectPeriod: 1000,
         connectTimeout: 30 * 1000
